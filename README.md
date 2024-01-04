@@ -25,7 +25,7 @@ a simple bookstore management website
 ---
 - [ ] Step - 1  
 
-[Download the Project Source code](https://github.com/code-with-Rashed/bookstore/archive/refs/heads/master.zip)  
+[Download the Project](https://github.com/code-with-Rashed/bookstore/archive/refs/heads/master.zip)  
 
 - [ ] Step - 2  
 
