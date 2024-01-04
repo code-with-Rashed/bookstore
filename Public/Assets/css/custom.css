@@ -1,0 +1,53 @@
+:root {
+  --teal: #2ec1ac;
+  --teal_hover: #279e8c;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.h-fonts {
+  font-family: "Merienda", cursive;
+}
+
+.custom-bg {
+  background-color: var(--teal) !important;
+  border: 1px solid var(--teal) !important;
+}
+
+.custom-bg:hover {
+  background-color: var(--teal_hover) !important;
+  border: 1px solid var(--teal_hover) !important;
+}
+
+.h-line {
+  margin: 0 auto;
+  width: 150px;
+  height: 1.7px;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.custom-alert {
+  position: fixed;
+  top: 80px;
+  right: 25px;
+}
+
+.pop:hover {
+  cursor: pointer;
+  border-top-color: var(--teal) !important;
+  transform: scale(1.03);
+  transition: all 0.3s;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: var(--teal);
+  width: 2.5rem;
+  height: 0.313rem;
+}
