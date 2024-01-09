@@ -23,6 +23,7 @@ class DB
         try {
             if (!$this->db_connection) {
                 $this->mysqli = new \mysqli($this->db_host, $this->db_username, $this->db_password, $this->db_name, $this->db_port);
+                $this->mysqli->set_charset("utf8");
                 $this->db_connection = true;
             }
         } catch (\Throwable $error) {
