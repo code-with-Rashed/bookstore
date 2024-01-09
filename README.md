@@ -66,3 +66,11 @@ $DEFAULT_TIMEZONE = "Asia/Dhaka";
 ### Admin login details
 Email : admin@gmail.com  
 Password : admin
+
+### bookstore requirement sitemap 
+
+![bookstore requirement sitemap](./Requirements/bookstore_sitemap.png) 
+
+### bookstore database diagram
+
+![bookstore database diagram](./sql/bookstore_db_diagram.png)
