@@ -68,7 +68,7 @@
               </div>
               <div class="col-12">
                 <button type="submit" class="btn w-100 custom-bg text-white shadow-none">
-                  Order complite
+                  Order Submit
                 </button>
               </div>
             </div>
