@@ -4,11 +4,11 @@
 }
 
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: sans-serif;
 }
 
 .h-fonts {
-  font-family: "Merienda", cursive;
+  font-family: system-ui;
 }
 
 .custom-bg {
