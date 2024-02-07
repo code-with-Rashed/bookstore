@@ -11,4 +11,8 @@
     <link rel="stylesheet" href="<?php echo assets("css/custom.css"); ?>" />
     <link rel="shortcut icon" href="<?php echo stored_file("favicon/" . get_favicon()); ?>" type="image/x-icon" />
 </head>
-<body class="bg-light">
+
+<body class="bg-light" data-bs-spy="scroll">
+    <!-- Scroll button start -->
+    <?php view("/frontend/common/scroll"); ?>
+    <!-- Scroll button end -->

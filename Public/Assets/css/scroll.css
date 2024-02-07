@@ -1,0 +1,24 @@
+/* Scroll Up Button */
+#scrollUp {
+  position: fixed;
+  right: 2%;
+  bottom: 3%;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  padding: 2px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 500;
+  display: none;
+  transition: all 0.4s ease-in-out 0s;
+  background-color: var(--teal);
+}
+
+#scrollUp:hover {
+  background-color: var(--teal_hover);
+}
+
+#scrollUp.scrollActive {
+  display: block;
+}
