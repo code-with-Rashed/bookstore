@@ -59,12 +59,13 @@ if (!empty($banners)) {
               </div>
             </div>
             <div class="d-flex mb-2 mt-4 justify-content-evenly">
-              <a href="<?php echo url("/order/" . $value["id"]); ?>" class="btn btn-sm custom-bg text-white shadow-none">Order Now</a>
+              <button onclick="addToCart(<?php echo $value['id']; ?>)" class="btn btn-sm custom-bg text-white shadow-none"><i class="bi bi-cart fw-bold"></i> Add to Cart</button>
               <a href="<?php echo url("/order/" . $value["id"]); ?>" class="btn btn-sm btn-outline-dark shadow-none">More Details</a>
             </div>
           </div>
         </div>
-    <?php }} ?>
+    <?php }
+    } ?>
   </div>
 </div>
 <!-- Reach Us -->

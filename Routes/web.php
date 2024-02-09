@@ -13,6 +13,7 @@ use App\Controllers\Admin\DashboardController;
 use App\Controllers\Admin\OrdersController;
 use App\Controllers\Admin\PrivacyPolicyController;
 use App\Controllers\Admin\TermsConditionsController;
+use App\Controllers\Cart\CartController;
 use App\Controllers\OrderController;
 use App\Controllers\OrderSuccessController;
 use App\Controllers\PrivacyPolicyController as PrivacyPolicy;
@@ -48,6 +49,10 @@ Router::get("/privacy/policy", [PrivacyPolicy::class, "index"]);
 // Terms & Conditions routes start
 Router::get("/terms/conditions", [TermsConditions::class, "index"]);
 // Terms & Conditions routes end
+
+// Cart Handle start
+Router::get("/add-to-cart/{id}",[CartController::class,'add_to_cart']);
+// Cart Handle end
 
 // Fronted routers end
 
