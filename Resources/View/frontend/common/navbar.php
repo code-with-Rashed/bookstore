@@ -15,7 +15,7 @@
                     <a class="nav-link me-2" href="<?php echo url("/contact"); ?>">Contact us</a>
                 </li>
             </ul>
-            <div class="d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cartModal">
+            <div class="d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="fetchCartData()">
                 <button type="button" class="btn btn-sm custom-bg shadow-none">
                  <span class="badge text-bg-danger" id="cart-count-one">0</span>
                  <i class="bi bi-bag fs-4 text-white"></i>

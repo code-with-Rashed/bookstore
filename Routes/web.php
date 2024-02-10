@@ -52,6 +52,7 @@ Router::get("/terms/conditions", [TermsConditions::class, "index"]);
 
 // Cart Handle start
 Router::get("/add-to-cart/{id}",[CartController::class,'add_to_cart']);
+Router::get("/fetch-cart-data",[CartController::class,'fetch_cart_data']);
 // Cart Handle end
 
 // Fronted routers end
