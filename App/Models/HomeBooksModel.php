@@ -19,7 +19,7 @@ class HomeBooksModel
         $db = new DB();
         $id = $db->escapestring($id);
         $db->select(table: "books", where: "id = $id AND status = 1");
-        $db->select(table: "books_image", column: "image", where: "books_id = $id AND thumbnail != 1");
+        $db->select(table: "books_image", column: "image", where: "books_id = $id");
         $result = $db->get_result();
         return $result;
     }

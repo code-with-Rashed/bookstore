@@ -13,6 +13,7 @@ use App\Controllers\Admin\DashboardController;
 use App\Controllers\Admin\OrdersController;
 use App\Controllers\Admin\PrivacyPolicyController;
 use App\Controllers\Admin\TermsConditionsController;
+use App\Controllers\BookDetailsController;
 use App\Controllers\Cart\CartController;
 use App\Controllers\OrderController;
 use App\Controllers\OrderSuccessController;
@@ -28,8 +29,11 @@ Router::get("/", function () {
 });
 // Home routes end
 
+// Book details route start
+Router::get("/details/{id}",[BookDetailsController::class,"details"]);
+// Book details route end
+
 // Order routes start
-Router::get("/order/{id}", [OrderController::class, "order"]);
 Router::post("/order/now", [OrderController::class, "order_now"]);
 // Order routes end
 

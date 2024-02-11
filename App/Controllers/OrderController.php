@@ -7,28 +7,9 @@ use Management\Classes\Session;
 use Management\Classes\Validation;
 use Management\Classes\Filtration;
 use App\Models\OrderBooksModel;
-use App\Models\HomeBooksModel;
 
 class OrderController
 {
-    public function order($id)
-    {
-        if (!filter_var($id, FILTER_VALIDATE_INT)) {
-            return redirect("/");
-        }
-        $order_books_model = new HomeBooksModel();
-        $result = $order_books_model->select_books_details($id);
-        if (empty(array_merge(...$result))) {
-            return redirect("/");
-        }
-        $csrf = Csrf::create();
-        $data = [];
-        $data["csrf_token"] = $csrf["CSRF"];
-        $data["books_details"] = $result[0][0];
-        $data["books_images"] = $result[1];
-        Session::set("order_books", ["id" => $data["books_details"]["id"], "price" => $data["books_details"]["price"]]);
-        return view("frontend/order", $data);
-    }
     // Order submit
     function order_now()
     {
