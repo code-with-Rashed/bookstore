@@ -1,4 +1,4 @@
-<title>Order page</title>
+<title>Book Details Page</title>
 <!-- header area start -->
 <?php view("/frontend/common/header"); ?>
 <!-- header area end -->
