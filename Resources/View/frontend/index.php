@@ -60,7 +60,7 @@ if (!empty($banners)) {
             </div>
             <div class="d-flex mb-2 mt-4 justify-content-evenly">
               <button onclick="addToCart(<?php echo $value['id']; ?>)" class="btn btn-sm custom-bg text-white shadow-none"><i class="bi bi-cart fw-bold"></i> Add to Cart</button>
-              <a href="<?php echo url("/order/" . $value["id"]); ?>" class="btn btn-sm btn-outline-dark shadow-none">More Details</a>
+              <a href="<?php echo url("/details/" . $value["id"]); ?>" class="btn btn-sm btn-outline-dark shadow-none">More Details</a>
             </div>
           </div>
         </div>
