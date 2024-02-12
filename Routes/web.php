@@ -30,7 +30,7 @@ Router::get("/", function () {
 // Home routes end
 
 // Book details route start
-Router::get("/details/{id}",[BookDetailsController::class,"details"]);
+Router::get("/details/{id}", [BookDetailsController::class, "details"]);
 // Book details route end
 
 // Order routes start
@@ -55,8 +55,11 @@ Router::get("/terms/conditions", [TermsConditions::class, "index"]);
 // Terms & Conditions routes end
 
 // Cart Handle start
-Router::get("/add-to-cart/{id}",[CartController::class,'add_to_cart']);
-Router::get("/fetch-cart-data",[CartController::class,'fetch_cart_data']);
+Router::get("/add-to-cart/{id}", [CartController::class, 'add_to_cart']);
+Router::get("/fetch-cart-data", [CartController::class, 'fetch_cart_data']);
+Router::get("/up_quantity/{id}", [CartController::class, 'up_quantity']);
+Router::get("/down_quantity/{id}", [CartController::class, 'down_quantity']);
+Router::get("/item_quantity", [CartController::class, 'item_quantity']);
 // Cart Handle end
 
 // Fronted routers end

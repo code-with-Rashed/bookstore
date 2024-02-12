@@ -24,31 +24,8 @@
         </div>
     </div>
 </div>
-<template id="cart-prototype-template">
-    <div class="col mb-5 px-4">
-        <div class="bg-white shadow p-4 rounded border-4 border-top border-dark pop">
-            <div class="d-flex mb-2">
-                <img src="<?php echo stored_file("books_image/"); ?>" alt="cart image" width="80px" id="cart-book-image">
-                <div>
-                    <h2 class="m-3 h6" id="cart-book-name"></h2>
-                    <div class="m-3">
-                        <span class="badge rounded-pill bg-light text-dark text-wrap" id="cart-book-price"></span>
-                    </div>
-                    <div class="d-flex m-3">
-                        <div class="me-3">
-                            <button type="button" class="btn btn-sm custom-bg text-white shadow-none px-3 fw-bold">+</button>
-                        </div>
-                        <div class="me-3 btn btn-sm bg-danger text-white shadow-none px-3 fw-bold">1</div>
-                        <div>
-                            <button type="button" class="btn btn-sm custom-bg text-white shadow-none px-3 fw-bold">-</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</template>
 <script>
     var APP_URL = "<?php echo APP_URL ?>";
+    var IMAGE_URL = "<?php echo stored_file("books_image/"); ?>";
 </script>
 <script src="<?php echo assets("js/cart.js") ?>" defer></script>
