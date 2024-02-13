@@ -48,14 +48,12 @@ function fetchCartData() {
 
 // up cart item quantity
 function up_quantity(id) {
-    fetch(APP_URL + "/up_quantity/" + id);
-    item_quantity();
+    fetch(APP_URL + "/up_quantity/" + id).then(()=>item_quantity());
 }
 
 // down cart item quantity
 function down_quantity(id) {
-    fetch(APP_URL + "/down_quantity/" + id);
-    item_quantity();
+    fetch(APP_URL + "/down_quantity/" + id).then(()=>item_quantity());
 }
 
 function item_quantity() {
