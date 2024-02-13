@@ -10,13 +10,32 @@
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                <div class="modal-title fs-5" id="staticBackdropLabel">
+                    <span class="badge rounded bg-light text-white text-wrap custom-bg">Price : <span id="price"></span>&nbsp;&#2547;</span>
+                </div>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <!-- cart books start -->
                 <div class="row" id="carts-container"></div>
                 <!-- cart books end -->
+                <!-- Cart item price start  -->
+                <div class="row">
+                    <div class="col mb-5 px-4">
+                        <div class="bg-white shadow p-4 rounded border-4 border-top border-dark pop">
+                            <div class="mb-1">
+                                <span class="badge rounded bg-light text-white text-wrap custom-bg">Subtotal : <span id="subtotal" class="fw-bold"></span>&nbsp;&#2547;</span>
+                            </div>
+                            <div class="mb-1">
+                                <span class="badge rounded bg-primary text-wrap">Home Delivery: <span id="shipping" class="fw-bold"></span>&nbsp;&#2547;</span>
+                            </div>
+                            <div class="mb-1">
+                                <span class="badge rounded bg-danger text-wrap">Total Price: <span id="total-price" class="fw-bold"></span>&nbsp;&#2547;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cart item price end  -->
                 <div class="text-danger text-center d-none" id="empty-cart-message">No Books Found in your cart</div>
                 <hr>
             </div>

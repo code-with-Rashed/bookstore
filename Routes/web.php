@@ -60,6 +60,7 @@ Router::get("/fetch-cart-data", [CartController::class, 'fetch_cart_data']);
 Router::get("/up_quantity/{id}", [CartController::class, 'up_quantity']);
 Router::get("/down_quantity/{id}", [CartController::class, 'down_quantity']);
 Router::get("/item_quantity", [CartController::class, 'item_quantity']);
+Router::get("/price", [CartController::class, 'price']);
 // Cart Handle end
 
 // Fronted routers end

@@ -63,5 +63,16 @@ function item_quantity() {
         for (const item in data) {
             document.getElementById("item-" + item).innerHTML = data[item];
         }
+        cart_item_cost();
+    });
+}
+
+// get cart item total cost then price show the user
+function cart_item_cost() {
+    fetch(APP_URL + "/price/").then(res => res.json()).then((data) => {
+        document.getElementById("price").innerHTML = data.price;
+        document.getElementById("subtotal").innerHTML = data.price;
+        document.getElementById("shipping").innerHTML = data.shipping;
+        document.getElementById("total-price").innerHTML = data.total_price;
     });
 }

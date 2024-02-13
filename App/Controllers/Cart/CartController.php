@@ -75,4 +75,23 @@ class CartController
         }
         echo json_encode($item_quantity);
     }
+
+    // cart item cost calculation then response total price
+    public function price()
+    {
+        $carts = $carts = Session::get("carts");
+        $price = 0;
+        foreach ($carts as $value) {
+            $price += $value["price"] * $value["quantity"];
+        }
+        $shipping_charge = $this->shipping_charge();
+        $total_price = $price + $shipping_charge;
+        echo json_encode(["price" => $price, "shipping" => $shipping_charge, "total_price" => $total_price]);
+    }
+
+    // Shipping charge
+    public function shipping_charge()
+    {
+        return 150;
+    }
 }
