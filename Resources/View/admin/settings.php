@@ -188,7 +188,7 @@
             <input type="hidden" name="csrf_token" value="<?php echo $data['CSRF']; ?>">
             <div class="form-group">
               <label for="changeCharge" class="fw-bold mb-2">Edit Shipping Charge</label>
-              <input type="number" class="form-control" id="changeCharge" name="charge" required maxlength="6" value="150" />
+              <input type="number" class="form-control" id="changeCharge" name="charge" required maxlength="6" value="<?php echo $data["shipping_charge"];?>" />
             </div>
             <div class="form-group mt-3">
               <button type="submit" class="btn btn-primary">Change Charge</button>
