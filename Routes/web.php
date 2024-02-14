@@ -118,6 +118,7 @@ Router::get("/admin/settings", [SettingsController::class, "index"]);
 Router::post("/admin/settings/change/favicon", [SettingsController::class, "change_favicon"]);
 Router::post("/admin/settings/change/logo", [SettingsController::class, "change_logo"]);
 Router::post("/admin/settings/contact/information", [SettingsController::class, "contact_information"]);
+Router::post("/admin/settings/change/charge", [SettingsController::class, "shipping_charge"]);
 // Settings management routes end
 
 // Profile management routes start

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2024 at 05:46 PM
+-- Generation Time: Feb 14, 2024 at 10:58 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -270,6 +270,24 @@ INSERT INTO `privacy_policy` (`id`, `data`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `shipping_charge`
+--
+
+CREATE TABLE `shipping_charge` (
+  `id` int(11) NOT NULL,
+  `charge` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `shipping_charge`
+--
+
+INSERT INTO `shipping_charge` (`id`, `charge`) VALUES
+(1, 150);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `terms_conditions`
 --
 
@@ -352,6 +370,12 @@ ALTER TABLE `privacy_policy`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `shipping_charge`
+--
+ALTER TABLE `shipping_charge`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `terms_conditions`
 --
 ALTER TABLE `terms_conditions`
@@ -419,6 +443,12 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `privacy_policy`
 --
 ALTER TABLE `privacy_policy`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `shipping_charge`
+--
+ALTER TABLE `shipping_charge`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --

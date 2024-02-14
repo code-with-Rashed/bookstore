@@ -12,6 +12,7 @@ class SettingsModel
         $db->select(table: "favicon");
         $db->select(table: "logo");
         $db->select(table: "contact_information");
+        $db->select(table: "shipping_charge");
         $result = $db->get_result();
         return $result;
     }
@@ -42,5 +43,12 @@ class SettingsModel
         $result = $db->get_result();
         return $result[0];
         die;
+    }
+    public function change_shipping_charge($data)
+    {
+        $db = new DB();
+        $db->update(table: "shipping_charge", updated_data: $data, where: "id=1");
+        $result = $db->get_result();
+        return $result[0];
     }
 }

@@ -37,6 +37,17 @@
                   Change Logo
                 </button>
               </div>
+              <!-- Shipping charge management start -->
+              <div class="col-md-6 shadow rounded p-3 m-2 w-25 text-center">
+                <div class="h5 mb-2">Home Delivery Charge</div>
+                <div>
+                  <span class="badge rounded bg-primary text-wrap fw-bold fs-6"><i class="bi bi-truck me-1"></i><br><?php echo $data["shipping_charge"]; ?>&nbsp;&#2547;</span>
+                </div>
+                <button type="button" class="btn btn-sm btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#changeChargeModal">
+                  Change Charge
+                </button>
+              </div>
+              <!-- Shipping charge management start -->
             </div>
           </div>
         </div>
@@ -161,6 +172,33 @@
     </div>
   </div>
   <!-- Change Favicon Modal End-->
+
+  <!-- Change charge Modal Start-->
+  <div class="modal fade" id="changeChargeModal" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">
+            Change Charge
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="<?php echo url("/admin/settings/change/charge"); ?>" method="post">
+            <input type="hidden" name="csrf_token" value="<?php echo $data['CSRF']; ?>">
+            <div class="form-group">
+              <label for="changeCharge" class="fw-bold mb-2">Edit Shipping Charge</label>
+              <input type="number" class="form-control" id="changeCharge" name="charge" required maxlength="6" value="150" />
+            </div>
+            <div class="form-group mt-3">
+              <button type="submit" class="btn btn-primary">Change Charge</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Change change Modal End-->
 
   <!-- Contact modal -->
   <div class="modal fade" id="contacts-s" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">

@@ -29,6 +29,7 @@ class SettingsController
         $data["favicon"] = $merge_settings_data[0]["favicon"];
         $data["logo"] = $merge_settings_data[1]["logo"];
         $data["contact_information"] = $merge_settings_data[2];
+        $data["shipping_charge"] = $merge_settings_data[3]["charge"];
         $data["CSRF"] = $csrf["CSRF"];
         return view("admin/settings", $data);
     }
@@ -124,5 +125,33 @@ class SettingsController
         $settings_model->save_contact_information($contact_information);
         return redirect("/admin/settings");
         die;
+    }
+
+    public function shipping_charge()
+    {
+        // validation proccess start
+        $requirment = [
+            "csrf_token" => ["required"],
+            "charge" => ["required", "max:6","integer"]
+        ];
+        $validation = new Validation();
+        $validation->validate($_POST, $requirment);
+        $validation_result = $validation->errors();
+        if (count($validation_result) > 0 || !Csrf::match($_POST["csrf_token"])) {
+            redirect("/admin/settings");
+            die;
+        }
+        // validation proccess end
+
+        // Shipping Charge Filtration proccess start
+        $shipping_charge = Filtration::filter([
+            "charge" => $_POST["charge"],
+        ]);
+        // Shipping Charge Filtration proccess end
+
+        // update shipping charge
+        $settings_model = new SettingsModel();
+        $settings_model->change_shipping_charge($shipping_charge);
+        return redirect("/admin/settings");
     }
 }
