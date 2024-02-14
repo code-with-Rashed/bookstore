@@ -92,6 +92,9 @@ class CartController
     // Shipping charge
     public function shipping_charge()
     {
-        return 150;
+        $db = new DB();
+        $db->select(table: "shipping_charge", column: "charge", where: "id=1");
+        $result = $db->get_result();
+        return $result[0][0]["charge"];
     }
 }
