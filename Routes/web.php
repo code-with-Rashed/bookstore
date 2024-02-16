@@ -61,6 +61,8 @@ Router::get("/up_quantity/{id}", [CartController::class, 'up_quantity']);
 Router::get("/down_quantity/{id}", [CartController::class, 'down_quantity']);
 Router::get("/item_quantity", [CartController::class, 'item_quantity']);
 Router::get("/price", [CartController::class, 'price']);
+Router::get("/delete_cart_item/{id}", [CartController::class, 'delete_cart_item']);
+Router::get("/cart_count", [CartController::class, 'cart_count']);
 // Cart Handle end
 
 // Fronted routers end

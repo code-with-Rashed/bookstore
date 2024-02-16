@@ -30,8 +30,6 @@ class CartController
                 Session::set("carts", $carts);
             }
         }
-        // return total cart count
-        echo json_encode(["count" => count(Session::get("carts") ?? [])]);
     }
 
     // send add to cart data from session
@@ -79,13 +77,17 @@ class CartController
     // cart item cost calculation then response total price
     public function price()
     {
-        $carts = $carts = Session::get("carts");
+        $carts = Session::get("carts");
         $price = 0;
-        foreach ($carts as $value) {
-            $price += $value["price"] * $value["quantity"];
+        $total_price = 0;
+        $shipping_charge = 0;
+        if (!empty($carts)) {
+            foreach ($carts as $value) {
+                $price += $value["price"] * $value["quantity"];
+            }
+            $shipping_charge = $this->shipping_charge();
+            $total_price = $price + $shipping_charge;
         }
-        $shipping_charge = $this->shipping_charge();
-        $total_price = $price + $shipping_charge;
         echo json_encode(["price" => $price, "shipping" => $shipping_charge, "total_price" => $total_price]);
     }
 
@@ -96,5 +98,20 @@ class CartController
         $db->select(table: "shipping_charge", column: "charge", where: "id=1");
         $result = $db->get_result();
         return $result[0][0]["charge"];
+    }
+
+    // delete cart item
+    public function delete_cart_item($id)
+    {
+        $carts = Session::get("carts");
+        unset($carts[$id]);
+        Session::set("carts", $carts);
+    }
+
+    // cart item count
+    public function cart_count()
+    {
+        // return total cart count
+        echo json_encode(["count" => count(Session::get("carts") ?? [])]);
     }
 }

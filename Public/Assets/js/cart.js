@@ -1,13 +1,16 @@
-// increment add to cart count 
-const cartCountOne = document.getElementById("cart-count-one");
-const cartCountTwo = document.getElementById("cart-count-two");
+// add to cart
 function addToCart(id = 0) {
-    fetch(APP_URL + "/add-to-cart/" + id).then(res => res.json()).then((cart) => {
-        cartCountOne.innerHTML = cart.count;
-        cartCountTwo.innerHTML = cart.count;
+    fetch(APP_URL + "/add-to-cart/" + id).then(() => cart_count());
+}
+
+// count total cart
+function cart_count() {
+    fetch(APP_URL + "/cart_count").then(res => res.json()).then((cart) => {
+        document.getElementById("cart-count-one").innerHTML = cart.count;
+        document.getElementById("cart-count-two").innerHTML = cart.count;
     });
 }
-addToCart();
+cart_count();
 
 // fetch add to cart data
 function fetchCartData() {
@@ -15,8 +18,9 @@ function fetchCartData() {
     fetch(APP_URL + "/fetch-cart-data").then(res => res.json()).then((data) => {
         if (data.is_carts_empty) {
             for (const cart of data.carts_books) {
-                cart_item += `<div class="col mb-5 px-4">
-               <div class="bg-white shadow p-4 rounded border-4 border-top border-dark pop">
+                cart_item += `<div class="col mb-5 px-4" id="cart-item-box-${cart.id}">
+               <div class="bg-white shadow p-4 rounded border-4 border-top border-dark pop position-relative">
+                   <span class="position-absolute top-0 start-100 translate-middle badge rounded bg-danger text-white fw-bold py-1 px-2 fs-6" onclick="delete_cart_item(${cart.id})">&times;</span>
                    <div class="d-flex mb-2">
                        <img src="${IMAGE_URL + cart.image}" alt="cart image" width="80px" id="cart-book-image">
                        <div>
@@ -48,12 +52,12 @@ function fetchCartData() {
 
 // up cart item quantity
 function up_quantity(id) {
-    fetch(APP_URL + "/up_quantity/" + id).then(()=>item_quantity());
+    fetch(APP_URL + "/up_quantity/" + id).then(() => item_quantity());
 }
 
 // down cart item quantity
 function down_quantity(id) {
-    fetch(APP_URL + "/down_quantity/" + id).then(()=>item_quantity());
+    fetch(APP_URL + "/down_quantity/" + id).then(() => item_quantity());
 }
 
 function item_quantity() {
@@ -72,5 +76,14 @@ function cart_item_cost() {
         document.getElementById("subtotal").innerHTML = data.price;
         document.getElementById("shipping").innerHTML = data.shipping;
         document.getElementById("total-price").innerHTML = data.total_price;
+    });
+}
+
+// delete cart item request
+function delete_cart_item(id) {
+    fetch(APP_URL + "/delete_cart_item/" + id).then(() => {
+        document.getElementById("cart-item-box-" + id).remove();
+        cart_count();
+        item_quantity();
     });
 }
