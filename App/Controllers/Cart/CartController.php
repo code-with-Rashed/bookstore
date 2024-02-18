@@ -39,12 +39,15 @@ class CartController
             echo json_encode(["is_carts_empty" => false]);
             return;
         }
-
-        $books_id = implode(',', array_keys(Session::get("carts")));
-        $db = new DB();
-        $db->select(table: "books", column: "books.id,books.name,books.price,books_image.image", join: "books_image ON books.id = books_image.books_id", where: "books.status = 1 AND books_image.thumbnail = 1 AND books.id in ($books_id)");
-        $result = $db->get_result();
-        echo json_encode(["is_carts_empty" => true, "carts_books" => $result[0]]);
+        if (!empty(Session::get("carts"))) {
+            $books_id = implode(',', array_keys(Session::get("carts")));
+            $db = new DB();
+            $db->select(table: "books", column: "books.id,books.name,books.price,books_image.image", join: "books_image ON books.id = books_image.books_id", where: "books.status = 1 AND books_image.thumbnail = 1 AND books.id in ($books_id)");
+            $result = $db->get_result();
+            echo json_encode(["is_carts_empty" => true, "carts_books" => $result[0]]);
+        } else {
+            echo json_encode(["is_carts_empty" => false, "carts_books" => []]);
+        }
     }
 
     // up cart item quantity
