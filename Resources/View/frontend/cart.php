@@ -11,7 +11,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="modal-title fs-5" id="staticBackdropLabel">
-                    <span class="badge rounded bg-light text-white text-wrap custom-bg">Price : <span id="price"></span>&nbsp;&#2547;</span>
+                    <span class="badge rounded bg-light text-white text-wrap custom-bg d-none" id="show-price">Price : <span id="price"></span>&nbsp;&#2547;</span>
                 </div>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -20,7 +20,7 @@
                 <div class="row" id="carts-container"></div>
                 <!-- cart books end -->
                 <!-- Cart item price start  -->
-                <div class="row">
+                <div class="row d-none" id="show-cost-list">
                     <div class="col mb-5 px-4">
                         <div class="bg-white shadow p-4 rounded border-4 border-top border-dark pop">
                             <div class="mb-1">
@@ -38,6 +38,11 @@
                 <!-- Cart item price end  -->
                 <div class="text-danger text-center d-none" id="empty-cart-message">No Books Found in your cart</div>
                 <hr>
+                <!-- checkout buttoun start -->
+                <div class="w-50 m-auto d-none" id="checkout-button">
+                    <a href="<?php echo url("/checkout"); ?>" class="btn btn-sm custom-bg text-white shadow-none d-block fw-bold py-2">Checkout</a>
+                </div>
+                <!-- checkout buttoun end -->
             </div>
             <div class="modal-footer"></div>
         </div>

@@ -43,9 +43,12 @@ function fetchCartData() {
              </div>`;
             }
             document.getElementById('carts-container').innerHTML = cart_item;
+            show();
             item_quantity();
+            document.getElementById("empty-cart-message").classList.add("d-none");
         } else {
             document.getElementById("empty-cart-message").classList.remove("d-none");
+            hide();
         }
     });
 }
@@ -86,4 +89,17 @@ function delete_cart_item(id) {
         cart_count();
         item_quantity();
     });
+}
+
+// show element
+function show() {
+    document.getElementById("show-price").classList.remove("d-none");
+    document.getElementById("show-cost-list").classList.remove("d-none");
+    document.getElementById("checkout-button").classList.remove("d-none");
+}
+// hide element
+function hide() {
+    document.getElementById("show-price").classList.add("d-none");
+    document.getElementById("show-cost-list").classList.add("d-none");
+    document.getElementById("checkout-button").classList.add("d-none");
 }
