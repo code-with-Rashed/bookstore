@@ -19,6 +19,23 @@
                 <!-- cart books start -->
                 <div class="row" id="carts-container"></div>
                 <!-- cart books end -->
+                <!-- Chose delivery option start  -->
+                <div class="row d-none" id="show-delivery-option">
+                    <div class="col mb-5 px-4">
+                        <div class="bg-white shadow p-4 rounded border-4 border-top border-dark pop">
+                            <div class="mb-2">হোম ডেলিভারি নির্বাচন করুন</div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" onchange="inside_dhaka()" checked>
+                                <label class="form-check-label" for="inlineRadio1">ঢাকার ভিতরে</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" onchange="outside_dhaka()">
+                                <label class="form-check-label" for="inlineRadio2">ঢাকার বাইরে</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Chose delivery option end  -->
                 <!-- Cart item price start  -->
                 <div class="row d-none" id="show-cost-list">
                     <div class="col mb-5 px-4">

@@ -98,9 +98,16 @@ class CartController
     public function shipping_charge()
     {
         $db = new DB();
-        $db->select(table: "shipping_charge", column: "charge", where: "id=1");
+        $db->select(table: "shipping_charge", where: "id=1");
         $result = $db->get_result();
-        return $result[0][0]["charge"];
+
+        $this->delivery_option();
+        $chosed_delivery_option = Session::get("delivery_option");
+        if ($chosed_delivery_option["inside_dhaka"]) {
+            return $result[0][0]["inside_dhaka"];
+        } else if ($chosed_delivery_option["outside_dhaka"]) {
+            return $result[0][0]["outside_dhaka"];
+        }
     }
 
     // delete cart item
@@ -117,4 +124,32 @@ class CartController
         // return total cart count
         echo json_encode(["count" => count(Session::get("carts") ?? [])]);
     }
+
+    // monitor selected delivery option
+    public function delivery_option()
+    {
+        if (!Session::has("delivery_option")) {
+            $delivery_option = [];
+            $delivery_option["inside_dhaka"] = true;
+            $delivery_option["outside_dhaka"] = false;
+            Session::set("delivery_option", $delivery_option);
+        }
+    }
+    public function inside_dhaka()
+    {
+        $this->delivery_option();
+        $delivery_option = Session::get("delivery_option");
+        $delivery_option["inside_dhaka"] = true;
+        $delivery_option["outside_dhaka"] = false;
+        Session::set("delivery_option", $delivery_option);
+    }
+    public function outside_dhaka()
+    {
+        $this->delivery_option();
+        $delivery_option = Session::get("delivery_option");
+        $delivery_option["inside_dhaka"] = false;
+        $delivery_option["outside_dhaka"] = true;
+        Session::set("delivery_option", $delivery_option);
+    }
+    // =========================
 }

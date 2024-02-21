@@ -82,6 +82,14 @@ function cart_item_cost() {
     });
 }
 
+// delivery option
+function inside_dhaka() {
+    fetch(APP_URL + "/inside_dhaka").then(() => cart_item_cost());
+
+}
+function outside_dhaka() {
+    fetch(APP_URL + "/outside_dhaka").then(() => cart_item_cost());
+}
 // delete cart item request
 function delete_cart_item(id) {
     fetch(APP_URL + "/delete_cart_item/" + id).then(() => {
@@ -95,11 +103,13 @@ function delete_cart_item(id) {
 function show() {
     document.getElementById("show-price").classList.remove("d-none");
     document.getElementById("show-cost-list").classList.remove("d-none");
+    document.getElementById("show-delivery-option").classList.remove("d-none");
     document.getElementById("checkout-button").classList.remove("d-none");
 }
 // hide element
 function hide() {
     document.getElementById("show-price").classList.add("d-none");
     document.getElementById("show-cost-list").classList.add("d-none");
+    document.getElementById("show-delivery-option").classList.add("d-none");
     document.getElementById("checkout-button").classList.add("d-none");
 }
