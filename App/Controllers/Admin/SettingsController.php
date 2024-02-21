@@ -29,7 +29,7 @@ class SettingsController
         $data["favicon"] = $merge_settings_data[0]["favicon"];
         $data["logo"] = $merge_settings_data[1]["logo"];
         $data["contact_information"] = $merge_settings_data[2];
-        $data["shipping_charge"] = $merge_settings_data[3]["charge"];
+        $data["shipping_charge"] = $merge_settings_data[3];
         $data["CSRF"] = $csrf["CSRF"];
         return view("admin/settings", $data);
     }
@@ -132,7 +132,8 @@ class SettingsController
         // validation proccess start
         $requirment = [
             "csrf_token" => ["required"],
-            "charge" => ["required", "max:6","integer"]
+            "inside_dhaka" => ["required", "max:6","integer"],
+            "outside_dhaka" => ["required", "max:6","integer"],
         ];
         $validation = new Validation();
         $validation->validate($_POST, $requirment);
@@ -145,7 +146,8 @@ class SettingsController
 
         // Shipping Charge Filtration proccess start
         $shipping_charge = Filtration::filter([
-            "charge" => $_POST["charge"],
+            "inside_dhaka" => $_POST["inside_dhaka"],
+            "outside_dhaka" => $_POST["outside_dhaka"],
         ]);
         // Shipping Charge Filtration proccess end
 
