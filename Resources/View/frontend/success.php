@@ -18,32 +18,69 @@
         <!-- Invoice start -->
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 bg-white shadow-sm p-4 rounded mt-3">
-                    <div class="d-flex justify-content-center mb-5">
-                        <div>
-                            <img src="<?php echo stored_file("books_image/" . $data["book_image"]); ?>" alt="selling-book" width="100px" class="rounded mb-2" />
+                <div class="col-md-10 bg-white shadow-sm p-4 rounded mt-3">
+                    <div class="row mb-3">
+                        <div class="col-md-8 col-sm-12">
+                            <p>
+                                <strong>Invoice Number :</strong> <span><?php echo $data["delivery_details"]["id"]; ?></span>
+                            </p>
+                            <p>
+                                <strong>Date & Time : </strong> <span><?php echo $data["delivery_details"]["datetime"]; ?></span>
+                            </p>
                         </div>
-                        <div class="ms-3">
-                            <h6 class="mb-2"><?php echo $data["book_name"]; ?></h6>
-                            <strong>&#2547;&nbsp;<?php echo $data["book_price"]; ?></strong>
+                        <div class="col-md-4 col-sm-12">
+                            <p>
+                                <strong>Name : </strong> <span><?php echo $data["delivery_details"]["name"]; ?></span>
+                            </p>
+                            <p>
+                                <strong>Phone : </strong> <span><?php echo $data["delivery_details"]["phone"]; ?></span>
+                            </p>
+                            <p>
+                                <strong>Address : </strong><span><?php echo $data["delivery_details"]["address"]; ?></span>
+                            </p>
                         </div>
                     </div>
                     <hr>
-                    <div class="d-flex justify-content-center">
-                        <div>
-                            <p><strong>Order Id : </strong><?php echo $data["order_details"]["id"]; ?></p>
-                            <p><strong>Name : </strong><?php echo $data["order_details"]["name"]; ?></p>
-                            <p><strong>Phone : </strong><?php echo $data["order_details"]["phone"]; ?></p>
-                            <p><strong>Email : </strong><?php echo $data["order_details"]["email"] ?></p>
-                            <p><strong>Whatsapp / Imo number : </strong><?php echo $data["order_details"]["whatsapp_imo"]; ?></p>
-                            <p><strong>Order Time : </strong><?php echo $data["order_details"]["datetime"]; ?></p>
-                            <p>
-                                <strong>Payment : </strong>Cash on delivery with delivery charge
-                            </p>
-                            <p>
-                                <strong>Address : </strong><?php echo $data["order_details"]["address"]; ?>
-                            </p>
-                        </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $subtotal = 0;
+                                $delivery_charge = $data["delivery_option"][$data["delivery_details"]["delivery_option"]];
+                                foreach ($data["order_books"] as $key => $value) {
+                                    $subtotal += $value["price"] * $value["quantity"];
+                                ?>
+                                    <tr>
+                                        <td><?php echo $value["name"]; ?></td>
+                                        <td>&#2547;&nbsp;<?php echo $value["price"]; ?></td>
+                                        <td><?php echo $value["quantity"]; ?></td>
+                                        <td>&#2547;&nbsp;<?php echo $value["price"] * $value["quantity"]; ?></td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="3" class="text-end">Subtotal :</th>
+                                    <td colspan="4">&#2547;&nbsp;<?php echo $subtotal; ?></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="3" class="text-end">Delivery Charge :</th>
+                                    <td colspan="4">&#2547;&nbsp;<?php echo $delivery_charge; ?></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="3" class="text-end">Total Price :</th>
+                                    <td colspan="4" class="fw-bold">&#2547;&nbsp;<?php echo $subtotal + $delivery_charge; ?></td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
                     <div class="d-print-none">
                         <hr>

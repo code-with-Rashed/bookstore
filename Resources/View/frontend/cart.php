@@ -55,11 +55,42 @@
                 <!-- Cart item price end  -->
                 <div class="text-danger text-center d-none" id="empty-cart-message">No Books Found in your cart</div>
                 <hr>
-                <!-- checkout buttoun start -->
-                <div class="w-50 m-auto d-none" id="checkout-button">
-                    <a href="<?php echo url("/checkout"); ?>" class="btn btn-sm custom-bg text-white shadow-none d-block fw-bold py-2">Checkout</a>
+                <!-- form -->
+                <div class="card my-4 border-0 shadow p-2 d-none" id="order-form">
+                    <div class="card-body">
+                        <h6 class="mb-3">Delivery Address</h6>
+                        <form method="post" action="<?php echo url("/order/now"); ?>" autocomplete="off">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="form-label">Name <strong class="text-danger">*</strong></label>
+                                    <input type="text" name="name" class="form-control shadow-none mb-3" required maxlength="40" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Phone number <strong class="text-danger">*</strong></label>
+                                    <input type="number" name="phone" class="form-control shadow-none mb-3" required maxlength="11" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" name="email" class="form-control shadow-none mb-3" maxlength="50" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Whatsapp / Imo number</label>
+                                    <input type="number" name="whatsapp_imo" class="form-control shadow-none mb-3" maxlength="11" />
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Address <strong class="text-danger">*</strong></label>
+                                    <textarea name="address" rows="3" class="form-control shadow-none mb-3" required maxlength="250"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn w-100 custom-bg text-white shadow-none">
+                                        Order Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <!-- checkout buttoun end -->
+                <!-- form -->
             </div>
             <div class="modal-footer"></div>
         </div>

@@ -104,12 +104,12 @@ function show() {
     document.getElementById("show-price").classList.remove("d-none");
     document.getElementById("show-cost-list").classList.remove("d-none");
     document.getElementById("show-delivery-option").classList.remove("d-none");
-    document.getElementById("checkout-button").classList.remove("d-none");
+    document.getElementById("order-form").classList.remove("d-none");
 }
 // hide element
 function hide() {
     document.getElementById("show-price").classList.add("d-none");
     document.getElementById("show-cost-list").classList.add("d-none");
     document.getElementById("show-delivery-option").classList.add("d-none");
-    document.getElementById("checkout-button").classList.add("d-none");
+    document.getElementById("order-form").classList.add("d-none");
 }

@@ -38,7 +38,7 @@ Router::post("/order/now", [OrderController::class, "order_now"]);
 // Order routes end
 
 // Success routes start
-Router::get("/success/{order_id}/{books_id}", [OrderSuccessController::class, "success"]);
+Router::get("/success/{order_id}", [OrderSuccessController::class, "success"]);
 // Success routes end
 
 // Contact routes start
