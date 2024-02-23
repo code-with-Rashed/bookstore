@@ -17,19 +17,15 @@ class OrdersController
         $result = $orders_model->select();
         return view("admin/orders", $result);
     }
-    public function order_details($orders_id, $books_id)
+    public function order_details($order_id)
     {
 
         $orders_model = new OrdersModel();
-        $result = $orders_model->order_details(orders_id: $orders_id, books_id: $books_id);
-        $result = array_merge(...$result);
-
+        $result = $orders_model->order_details(order_id: $order_id);
         $data = [];
-        $data["book_name"] = $result[0]["name"];
-        $data["book_price"] = $result[0]["price"];
-        $data["book_image"] = $result[1]["image"];
-        $data["order_details"] = $result[2];
-
+        $data["delivery_details"] = $result[0][0];
+        $data["delivery_option"] = $result[1][0];
+        $data["order_books"] = $result[2];
         echo json_encode($data);
     }
     // Orders complite or un-complite status update

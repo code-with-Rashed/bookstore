@@ -9,18 +9,17 @@ class OrdersModel
     public function select()
     {
         $db = new DB();
-        $db->select(table: "orders", column: "id,books_id,name,phone,datetime,status");
+        $db->select(table: "orders", column: "id,name,phone,datetime,status");
         $result = $db->get_result();
         return $result[0];
     }
-    public function order_details(int $orders_id, int $books_id)
+    public function order_details(int $order_id)
     {
         $db = new DB();
-        $orders_id = $db->escapestring($orders_id);
-        $books_id = $db->escapestring($books_id);
-        $db->select(table: "books", column: "name,price", where: "id = $books_id");
-        $db->select(table: "books_image", column: "image", where: "books_id = $books_id AND thumbnail = 1");
-        $db->select(table: "orders", where: "id = $orders_id");
+        $order_id = $db->escapestring($order_id);
+        $db->sql("SELECT * FROM orders WHERE id = $order_id");
+        $db->sql("SELECT * FROM shipping_charge WHERE id = 1");
+        $db->sql("SELECT books.name,books.price,order_item.quantity FROM books JOIN order_item ON books.id = order_item.book_id WHERE order_item.order_id = $order_id");
         $result = $db->get_result();
         return $result;
     }

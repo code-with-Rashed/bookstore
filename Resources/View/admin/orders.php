@@ -50,7 +50,7 @@
                       <?php } ?>
                     </td>
                     <td>
-                      <button class="btn btn-success btn-sm m-1" type="button" data-bs-toggle="modal" data-bs-target="#orderDetailsModal" onclick="orderDetails(<?php echo $value['id']; ?>,<?php echo $value['books_id']; ?>)">
+                      <button class="btn btn-success btn-sm m-1" type="button" data-bs-toggle="modal" data-bs-target="#orderDetailsModal" onclick="orderDetails(<?php echo $value['id']; ?>)">
                         <i class="bi bi-file-earmark-break"></i>
                         Details
                       </button>
@@ -120,47 +120,6 @@
       </div>
     </div>
   </div>
-  <!-- Delete Warning Modal End -->
-
-  <!-- Invoice start -->
-  <div class="container d-none d-print-block">
-    <div class="row justify-content-center">
-      <div class="col bg-white shadow-sm p-4 rounded mt-3" id="printableInvoice"></div>
-    </div>
-  </div>
-  <!-- Invoice end -->
-
-  <!-- Invoice template start -->
-  <template id="invoiceTemplate">
-    <div class="d-flex justify-content-center mb-5">
-      <div>
-        <img src="<?php echo stored_file("books_image/"); ?>" alt="selling-book" width="100px" class="rounded mb-2" id="book_image" />
-      </div>
-      <div class="ms-3">
-        <h6 class="mb-2"><span id="book_name"></span></h6>
-        <strong>&#2547;&nbsp;<span id="book_price"></span></strong>
-      </div>
-    </div>
-    <hr>
-    <div class="d-flex justify-content-center">
-      <div>
-        <p><strong>Order Id : </strong><span id="order_id"></span></p>
-        <p><strong>Name : </strong><span id="name"></span></p>
-        <p><strong>Phone : </strong><span id="phone"></span></p>
-        <p><strong>Email : </strong><span id="email"></span></p>
-        <p><strong>Whatsapp / Imo number : </strong><span id="whatsapp_imo"></span></p>
-        <p><strong>Order Time : </strong><span id="order_time"></span></p>
-        <p>
-          <strong>Payment : </strong>Cash on delivery with delivery charge
-        </p>
-        <p>
-          <strong>Address : </strong><span id="address"></span>
-        </p>
-      </div>
-    </div>
-  </template>
-  <!-- Invoice template end -->
-
   <!-- footer area start -->
   <?php view("/admin/common/footer"); ?>
   <script src="<?php echo assets("js/orderPage.js") ?>"></script>

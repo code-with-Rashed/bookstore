@@ -83,7 +83,7 @@ Router::get("/admin/dashboard", [DashboardController::class, "index"]);
 
 // Orders management routes start
 Router::get("/admin/orders", [OrdersController::class, "index"]);
-Router::get("/admin/order/details/{orders_id}/{books_id}", [OrdersController::class, "order_details"]);
+Router::get("/admin/order/details/{orders_id}", [OrdersController::class, "order_details"]);
 Router::get("/admin/orders/status/change/{id}/{status}", [OrdersController::class, "status_update"]);
 Router::get("/admin/delete/orders/{id}", [OrdersController::class, "delete"]);
 // Orders management routes end
