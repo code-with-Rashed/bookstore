@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2024 at 10:58 AM
+-- Generation Time: Feb 23, 2024 at 09:25 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -228,12 +228,12 @@ INSERT INTO `messages` (`id`, `name`, `email`, `subject`, `message`, `status`, `
 
 CREATE TABLE `orders` (
   `id` bigint(20) NOT NULL,
-  `books_id` int(11) NOT NULL,
   `name` varchar(40) NOT NULL,
   `phone` varchar(11) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
   `whatsapp_imo` varchar(11) DEFAULT NULL,
   `address` varchar(250) NOT NULL,
+  `delivery_option` enum('inside_dhaka','outside_dhaka') DEFAULT NULL,
   `datetime` varchar(40) NOT NULL,
   `status` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -242,12 +242,28 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `books_id`, `name`, `phone`, `email`, `whatsapp_imo`, `address`, `datetime`, `status`) VALUES
-(2, 2, 'Arafat islam', '01860491334', 'arafat@gmail.com', '01860491387', 'Narayanganj', '26/12/2023 - 05-09-15 PM', 0),
-(3, 6, 'Raihan islam', '01921083234', 'raihan@gmail.com', '01921083214', 'Dhaka', '26/12/2023 - 05-16-21 PM', 0),
-(4, 4, 'Mujahid islam', '01811180982', '', '', 'Jamalpur', '26/12/2023 - 05-17-47 PM', 0),
-(5, 7, 'Afia islam', '015734562', 'afia@gmail.com', '015734562', 'Cadpur', '26/12/2023 - 05-25-37 PM', 0),
-(7, 2, 'affan sekh', '01920138421', 'customer@gmail.com', '01920138421', 'Narayanganj , Bangladesh', '04/01/2024 - 10-41-52 PM', 0);
+INSERT INTO `orders` (`id`, `name`, `phone`, `email`, `whatsapp_imo`, `address`, `delivery_option`, `datetime`, `status`) VALUES
+(1, 'test', '01921038412', 'test@gmail.com', '01921038412', 'test', 'inside_dhaka', '23/02/2024 - 02-24-53 PM', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_item`
+--
+
+CREATE TABLE `order_item` (
+  `order_id` bigint(20) DEFAULT NULL,
+  `book_id` int(11) DEFAULT NULL,
+  `quantity` int(5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `order_item`
+--
+
+INSERT INTO `order_item` (`order_id`, `book_id`, `quantity`) VALUES
+(1, 1, 1),
+(1, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -274,16 +290,17 @@ INSERT INTO `privacy_policy` (`id`, `data`) VALUES
 --
 
 CREATE TABLE `shipping_charge` (
-  `id` int(11) NOT NULL,
-  `charge` int(11) NOT NULL DEFAULT 0
+  `id` int(11) DEFAULT NULL,
+  `inside_dhaka` int(11) DEFAULT NULL,
+  `outside_dhaka` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `shipping_charge`
 --
 
-INSERT INTO `shipping_charge` (`id`, `charge`) VALUES
-(1, 150);
+INSERT INTO `shipping_charge` (`id`, `inside_dhaka`, `outside_dhaka`) VALUES
+(1, 70, 150);
 
 -- --------------------------------------------------------
 
@@ -360,19 +377,19 @@ ALTER TABLE `messages`
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `books_id` (`books_id`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `order_item`
+--
+ALTER TABLE `order_item`
+  ADD KEY `order_item_ibfk_1` (`order_id`),
+  ADD KEY `book_id` (`book_id`);
 
 --
 -- Indexes for table `privacy_policy`
 --
 ALTER TABLE `privacy_policy`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `shipping_charge`
---
-ALTER TABLE `shipping_charge`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -437,18 +454,12 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `privacy_policy`
 --
 ALTER TABLE `privacy_policy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `shipping_charge`
---
-ALTER TABLE `shipping_charge`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -468,10 +479,11 @@ ALTER TABLE `books_image`
   ADD CONSTRAINT `books_image_ibfk_1` FOREIGN KEY (`books_id`) REFERENCES `books` (`id`);
 
 --
--- Constraints for table `orders`
+-- Constraints for table `order_item`
 --
-ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`books_id`) REFERENCES `books` (`id`);
+ALTER TABLE `order_item`
+  ADD CONSTRAINT `order_item_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `order_item_ibfk_2` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
