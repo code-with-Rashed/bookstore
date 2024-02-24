@@ -3,7 +3,7 @@
     <div class="container-fluid bg-white mt-5">
         <div class="row">
             <div class="col-md-4 p-4">
-                <h3 class="h-fonts fw-bold fs-3 mb-3">Nibras Book Store</h3>
+                <h3 class="h-fonts fw-bold fs-3 mb-3">Nibras Prokashon</h3>
                 <a href="<?php echo url("/privacy/policy"); ?>" class="d-inline-block text-dark text-decoration-none mb-2">Privacy Policy</a><br />
                 <a href="<?php echo url("/terms/conditions"); ?>" class="d-inline-block text-dark text-decoration-none mb-2">Terms & Conditions</a><br />
             </div>
@@ -13,7 +13,7 @@
                 <a href="<?php echo url("/contact"); ?>" class="d-inline-block text-dark text-decoration-none mb-2">Contact us</a><br />
             </div>
             <div class="col-md-4 p-4">
-                <h3 class="h-fonts fw-bold fs-3 mb-3">Fllow us</h3>
+                <h3 class="h-fonts fw-bold fs-3 mb-3">Follow us</h3>
                 <a href="<?php echo $contact_information["twitter"] ?? ""; ?>" target="_blank" class="d-inline-block text-dark text-decoration-none mb-2">
                     <i class="bi bi-twitter me-1"></i> Twitter
                 </a>
