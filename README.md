@@ -73,4 +73,4 @@ Password : admin
 
 ### bookstore database diagram
 
-![bookstore database diagram](./sql/bookstore_db_diagram.png)
+![bookstore database diagram](./sql/bookstore_final_db_diagram.png)
