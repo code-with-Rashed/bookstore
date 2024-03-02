@@ -43,7 +43,7 @@
             <div class="carousel-inner">
               <?php foreach ($data["books_images"] as $key => $value) { ?>
                 <div class="carousel-item <?php echo $key == 1 ? "active" : "" ?>" data-bs-interval="3000">
-                  <img src="<?php echo stored_file("books_image/" . $value['image']); ?>" class="d-block rounded m-auto w-100" alt="book img" />
+                  <img src="<?php echo stored_file("books_image/" . $value['image']); ?>" class="d-block rounded m-auto w-100" alt="book img" loading="lazy"/>
                 </div>
               <?php } ?>
             </div>

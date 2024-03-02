@@ -22,7 +22,7 @@ if (!empty($banners)) {
     <div class="carousel-inner">
       <?php foreach ($banners as $key => $value) { ?>
         <div class="carousel-item <?php echo $key == 0 ? "active" : "" ?>" data-bs-interval="3000">
-          <img src="<?php echo stored_file("banners/" . $value['image']); ?>" class="d-block w-100" alt="banner" />
+          <img src="<?php echo stored_file("banners/" . $value['image']); ?>" class="d-block w-100" alt="banner" loading="lazy"/>
         </div>
       <?php } ?>
     </div>
@@ -50,7 +50,7 @@ if (!empty($banners)) {
         <div class="col-lg-4 col-md-6 mb-5 px-4">
           <div class="bg-white shadow p-4 rounded border-4 border-top border-dark pop">
             <div class="d-flex mb-2">
-              <img src="<?php echo stored_file("books_image/" . $value['image']); ?>" alt="books image" width="100px" />
+              <img src="<?php echo stored_file("books_image/" . $value['image']); ?>" alt="books image" width="100px" loading="lazy"/>
               <div>
                 <h2 class="m-3 h4"><?php echo $value["name"]; ?></h2>
                 <div class="m-3">

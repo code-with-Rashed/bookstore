@@ -22,7 +22,7 @@ function fetchCartData() {
                <div class="bg-white shadow p-4 rounded border-4 border-top border-dark pop position-relative">
                    <span class="position-absolute top-0 start-100 translate-middle badge rounded bg-danger text-white fw-bold py-1 px-2 fs-6" onclick="delete_cart_item(${cart.id})">&times;</span>
                    <div class="d-flex mb-2">
-                       <img src="${IMAGE_URL + cart.image}" alt="cart image" width="80px" id="cart-book-image">
+                       <img src="${IMAGE_URL + cart.image}" alt="cart image" width="80px" id="cart-book-image" loading="lazy">
                        <div>
                            <h2 class="m-3 h6" id="cart-book-name">${cart.name}</h2>
                            <div class="m-3">
