@@ -165,7 +165,7 @@ class DB
     //check db table exist for use with queries
     private function table_exist(string $table)
     {
-        $sql = "SHOW TABLES FROM $this->db_name LIKE '$table'";
+        $sql = "SHOW TABLES FROM `$this->db_name` LIKE '$table'";
         try {
             $result = $this->mysqli->query($sql);
             if (!$result->num_rows) {
