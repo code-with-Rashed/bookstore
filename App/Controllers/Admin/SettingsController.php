@@ -95,7 +95,7 @@ class SettingsController
             "twitter" => ["required", "max:250"],
             "facebook" => ["required", "max:250"],
             "instagram" => ["required", "max:250"],
-            "iframe_link" => ["required", "max:250"]
+            "iframe_link" => ["required"]
         ];
         $validation = new Validation();
         $validation->validate($_POST, $requirment);

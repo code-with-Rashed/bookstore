@@ -288,7 +288,7 @@
                   <label class="form-label fw-bold">Iframe link</label>
                   <div class="input-group">
                     <span class="input-group-text border-0"><i class="bi bi-map"></i></span>
-                    <input type="url" name="iframe_link" class="form-control shadow-none" title="Enter your Iframe link" maxlength="250" value="<?php echo $data['contact_information']['iframe_link']; ?>" required />
+                    <input type="url" name="iframe_link" class="form-control shadow-none" title="Enter your Iframe link" value="<?php echo $data['contact_information']['iframe_link']; ?>" required />
                   </div>
                 </div>
               </div>
