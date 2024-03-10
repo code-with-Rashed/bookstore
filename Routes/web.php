@@ -142,3 +142,5 @@ Router::post("/admin/terms/conditions/update", [TermsConditionsController::class
 // Terms & Conditions management routes end
 
 // Admin pannel routers end
+
+Router::bad_request();

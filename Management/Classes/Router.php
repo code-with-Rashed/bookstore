@@ -42,11 +42,13 @@ class Router
             $arguments = array_slice($params, 1);
             if (is_callable($callback)) {
                 $callback(...$arguments);
+                die;
             } else if (is_array($callback)) {
                 (string) $class = $callback[0];
                 (string) $method = $callback[1];
                 (object) $object = new $class();
                 $object->$method(...$arguments);
+                die;
             }
         }
     }
@@ -84,6 +86,11 @@ class Router
             return;
         }
         self::process($url, $callback);
+    }
+
+    public static function bad_request()
+    {
+        redirect('/');
     }
 
     public static function __callStatic($name, $arguments)
