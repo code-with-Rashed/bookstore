@@ -63,14 +63,15 @@ $DEFAULT_TIMEZONE = "Asia/Dhaka";
 //---------------------
 ```
 
-### Admin login details
-Email : admin@gmail.com  
-Password : admin
+### Admin panel (dummy) credentials
+- Hit this link http://yourhostname/admin
 
-### bookstore requirement sitemap 
+| Email              | Password |
+|--------------------|----------|
+| admin@gmail.com    | admin    |
 
-![bookstore requirement sitemap](./Requirements/bookstore_sitemap.png) 
+### Required / key Features
+![key-features](./Preview/sitemap/sitemap.png)
 
-### bookstore database diagram
-
-![bookstore database diagram](./sql/bookstore_final_db_diagram.png)
+### database diagram
+![schema-diagram](./Preview/diagram/schema-diagram.png)
