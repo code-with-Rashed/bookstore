@@ -77,24 +77,24 @@ $DEFAULT_TIMEZONE = "Asia/Dhaka";
 ![schema-diagram](./Preview/diagram/schema-diagram.png)
 
 ### Preview for visitor panel
-![home-page](./preview/showcase/visitorpanel/home-page.jpeg) <br><hr><br>
-![cart-page](./preview/showcase/visitorpanel/cart-page.jpeg) <br><hr><br>
-![privacy-policy-page](./preview/showcase/visitorpanel/invoice.jpeg) <br><hr><br>
-![contact-page](./preview/showcase/visitorpanel/contact-page.jpeg)
+![home-page](./Preview/showcase/visitorpanel/home-page.jpeg) <br><hr><br>
+![cart-page](./Preview/showcase/visitorpanel/cart-page.jpeg) <br><hr><br>
+![privacy-policy-page](./Preview/showcase/visitorpanel/invoice.jpeg) <br><hr><br>
+![contact-page](./Preview/showcase/visitorpanel/contact-page.jpeg)
 <br><hr><br>
 
 
 ### Preview for admin panel
-![dashboard](./preview/showcase/adminpanel/dashboard.jpeg) <br><hr><br>
-![orders-management](./preview/showcase/adminpanel/orders-management.jpeg) <br><hr><br>
-![orders-details](./preview/showcase/adminpanel/order-details.jpeg) <br><hr><br>
-![books-management](./preview/showcase/adminpanel/books-management.jpeg) <br><hr><br>
-![add-books](./preview/showcase/adminpanel/add-book.jpeg) <br><hr><br>
-![books-image](./preview/showcase/adminpanel/add-book-image-modal.jpeg) <br><hr><br>
-![orders-management](./preview/showcase/adminpanel/orders-management.jpeg) <br><hr><br>
-![order-details](./preview/showcase/adminpanel/order-details.jpeg) <br><hr><br>
-![banner-management](./preview/showcase/adminpanel/banner-page.jpeg) <br><hr><br>
-![message-management](./preview/showcase/adminpanel/message-page.jpeg) <br><hr><br>
-![message-details](./preview/showcase/adminpanel/message-details-page.jpeg) <br><hr><br>
-![settings-management](./preview/showcase/adminpanel/settings-page.jpeg) <br><hr><br>
-![prifile-management](./preview/showcase/adminpanel/profile.jpeg) <br><hr><br>
+![dashboard](./Preview/showcase/adminpanel/dashboard.jpeg) <br><hr><br>
+![orders-management](./Preview/showcase/adminpanel/orders-management.jpeg) <br><hr><br>
+![orders-details](./Preview/showcase/adminpanel/order-details.jpeg) <br><hr><br>
+![books-management](./Preview/showcase/adminpanel/books-management.jpeg) <br><hr><br>
+![add-books](./Preview/showcase/adminpanel/add-book.jpeg) <br><hr><br>
+![books-image](./Preview/showcase/adminpanel/add-book-image-modal.jpeg) <br><hr><br>
+![orders-management](./Preview/showcase/adminpanel/orders-management.jpeg) <br><hr><br>
+![order-details](./Preview/showcase/adminpanel/order-details.jpeg) <br><hr><br>
+![banner-management](./Preview/showcase/adminpanel/banner-page.jpeg) <br><hr><br>
+![message-management](./Preview/showcase/adminpanel/message-page.jpeg) <br><hr><br>
+![message-details](./Preview/showcase/adminpanel/message-details-page.jpeg) <br><hr><br>
+![settings-management](./Preview/showcase/adminpanel/settings-page.jpeg) <br><hr><br>
+![prifile-management](./Preview/showcase/adminpanel/profile.jpeg) <br><hr><br>
