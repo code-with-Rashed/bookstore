@@ -75,3 +75,26 @@ $DEFAULT_TIMEZONE = "Asia/Dhaka";
 
 ### database diagram
 ![schema-diagram](./Preview/diagram/schema-diagram.png)
+
+### Preview for visitor panel
+![home-page](./preview/showcase/visitorpanel/home-page.jpeg) <br><hr><br>
+![cart-page](./preview/showcase/visitorpanel/cart-page.jpeg) <br><hr><br>
+![privacy-policy-page](./preview/showcase/visitorpanel/invoice.jpeg) <br><hr><br>
+![contact-page](./preview/showcase/visitorpanel/contact-page.jpeg)
+<br><hr><br>
+
+
+### Preview for admin panel
+![dashboard](./preview/showcase/adminpanel/dashboard.jpeg) <br><hr><br>
+![orders-management](./preview/showcase/adminpanel/orders-management.jpeg) <br><hr><br>
+![orders-details](./preview/showcase/adminpanel/order-details.jpeg) <br><hr><br>
+![books-management](./preview/showcase/adminpanel/books-management.jpeg) <br><hr><br>
+![add-books](./preview/showcase/adminpanel/add-book.jpeg) <br><hr><br>
+![books-image](./preview/showcase/adminpanel/add-book-image-modal.jpeg) <br><hr><br>
+![orders-management](./preview/showcase/adminpanel/orders-management.jpeg) <br><hr><br>
+![order-details](./preview/showcase/adminpanel/order-details.jpeg) <br><hr><br>
+![banner-management](./preview/showcase/adminpanel/banner-page.jpeg) <br><hr><br>
+![message-management](./preview/showcase/adminpanel/message-page.jpeg) <br><hr><br>
+![message-details](./preview/showcase/adminpanel/message-details-page.jpeg) <br><hr><br>
+![settings-management](./preview/showcase/adminpanel/settings-page.jpeg) <br><hr><br>
+![prifile-management](./preview/showcase/adminpanel/profile.jpeg) <br><hr><br>
