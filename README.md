@@ -2,15 +2,6 @@
 
 a simple bookstore management website
 
----
-
-<a href="http://nibrash.liveblog365.com/books_store/" target="_blank">visitor panel live ink</a>
-
----
-<a href="http://nibrash.liveblog365.com/books_store/admin" target="_blank">admin panel live ink</a>
-
----
-
 ### Version Requirment
 
 ---
