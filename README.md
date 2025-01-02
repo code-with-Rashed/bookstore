@@ -64,7 +64,10 @@ $DEFAULT_TIMEZONE = "Asia/Dhaka";
 ### Required / key Features
 ![key-features](./Preview/sitemap/sitemap.png)
 
-### database diagram
+### erdiagram live link
+https://drawsql.app/teams/rashed-3/diagrams/bookstore/embed
+
+### database diagram (png format)
 ![schema-diagram](./Preview/diagram/schema-diagram.png)
 
 ### Preview for visitor panel
